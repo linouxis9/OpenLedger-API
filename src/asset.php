@@ -24,12 +24,7 @@ class OpenLedgerAsset
 			$this->OpenLedger = $OpenLedger;
 		}
 		public function InfoOf($asset){
-			$array['name'] = $asset;
-			$array['asset'] = $this->OpenLedger->API->call('InfoOf', ["asset" => $asset]);
-			$array['id'] = $array['asset']['id'];
-			$array['precision'] = 10 ** $array['asset']['precision'];
-			$array['symbol'] = $array['asset']['symbol'];
-			$array['issuer'] = $array['asset']['issuer'];
+			$array = $this->OpenLedger->API->call('InfoOf', ["asset" => $asset]);
 			return $array;
 		}
 
