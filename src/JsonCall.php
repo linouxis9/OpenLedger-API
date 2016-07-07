@@ -21,7 +21,7 @@ class OpenLedgerJsonRPC
 	public function __construct($url) {
 		$this->curl = curl_init();
 		curl_setopt($this->curl, CURLOPT_USERAGENT, 'GraphenePHP/1.0');
-		curl_setopt($this->curl, CURLOPT_URL,$url);
+		$this->url = $url;
 		curl_setopt($this->curl, CURLOPT_POST, 1);
 		curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);
 	}
@@ -31,7 +31,7 @@ class OpenLedgerJsonRPC
 	}
 	
 	public function execute($method, $params) {
-		$params["function"] = $method;
+		curl_setopt($this->curl, CURLOPT_URL, $this->url.$method);
 		curl_setopt($this->curl, CURLOPT_POSTFIELDS, $params);
 		return curl_exec($this->curl);
 	}

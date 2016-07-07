@@ -26,7 +26,7 @@ class OpenLedgerAPI
 	public function call($call, $params=array()) {
 		if (in_array($call, $this->allowed_methods))
 			{
-			return json_decode($this->curl->execute($call, $params), true);
+			return json_decode($this->curl->execute($call, $params), true)['result'];
 			}
         return 0;
 	}

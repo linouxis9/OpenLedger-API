@@ -22,7 +22,7 @@ class OpenLedger
 {
 	public function __construct($account){
 		$this->name = $account;
-		$this->API = new OpenLedgerAPI("http://46.101.155.22/graphene-php/OL.php");
+		$this->API = new OpenLedgerAPI("http://185.62.189.242/graphene-php/api/v1/");
 		$this->Wallet = new OpenLedgerWallet($this);
 		$this->DEX = new OpenLedgerDEX($this);
 		$this->Asset = new OpenLedgerAsset($this);
