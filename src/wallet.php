@@ -43,8 +43,8 @@ class OpenLedgerWallet
 	 *
 	 * @return array Returns a multidimensional array of the transactions information.
 	 */
-	public function ReturnAccountHistory($account, $limit = 25) {
-		$array = $this->OpenLedger->API->call('ReturnAccountHistory', ["account" => $account, "limit" => $limit]);
+	public function returnAccountHistory($account, $limit = 25) {
+		$array = $this->OpenLedger->API->call('returnAccountHistory', ["account" => $account, "limit" => $limit]);
 		return $array;
 	}
 
@@ -55,8 +55,8 @@ class OpenLedgerWallet
 	 *
 	 * @return string Returns the account name.
 	 */
-	public function GetAccountByID($account_id) {
-		$array = $this->OpenLedger->API->call('GetAccountByID', ["account_id" => $account_id]);
+	public function getAccountByID($account_id) {
+		$array = $this->OpenLedger->API->call('getAccountByID', ["account_id" => $account_id]);
 		return $array;
 	}
 

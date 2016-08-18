@@ -23,8 +23,8 @@ class OpenLedgerAsset
 		public function __construct($OpenLedger){
 			$this->OpenLedger = $OpenLedger;
 		}
-		public function InfoOf($asset){
-			$array = $this->OpenLedger->API->call('InfoOf', ["asset" => $asset]);
+		public function infoOf($asset){
+			$array = $this->OpenLedger->API->call('infoOf', ["asset" => $asset]);
 			return $array;
 		}
 

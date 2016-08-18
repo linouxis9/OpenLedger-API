@@ -20,7 +20,7 @@ class OpenLedgerAPI
 {
 	public function __construct($address){
 		$this->curl = new OpenLedgerJsonRPC($address);
-		$this->allowed_methods = array("returnOrderBook", "returnChartData", "returnTicker", "returnBalance", "ReturnAccountHistory", "GetAccountByID", "InfoOf");
+		$this->allowed_methods = array("returnOrderBook", "returnChartData", "returnTicker", "returnBalance", "returnAccountHistory", "getAccountByID", "infoOf");
 	}
 	
 	public function call($call, $params=array()) {
